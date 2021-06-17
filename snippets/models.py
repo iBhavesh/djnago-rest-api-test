@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.deletion import CASCADE
 from pygments.lexers import get_all_lexers
 from pygments.styles import get_all_styles
 
@@ -19,3 +20,18 @@ class Snippet(models.Model):
 
     class Meta:
         ordering = ['created']
+
+
+class Department(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+class Doctor(models.Model):
+    name = models.CharField(max_length=100)
+    department = models.ForeignKey('Department', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
