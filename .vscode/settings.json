@@ -1,5 +1,6 @@
 {
   "python.pythonPath": "env/bin/python",
+  "python.analysis.autoImportCompletions": true,
   "python.linting.pylintPath": "env/bin/pylint",
   "python.languageServer": "Pylance",
   "python.linting.pylintEnabled": true,
